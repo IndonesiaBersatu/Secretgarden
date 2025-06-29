@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Secret Garden</title>
+  <style>
+    body {
+      background: linear-gradient(#fff0f5, #ffd6e7);
+      font-family: 'Courier New', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #b30059;
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+    input, button {
+      font-size: 1em;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    input {
+      width: 250px;
+    }
+    button {
+      background-color: #ff99cc;
+      color: white;
+      box-shadow: 0 0 8px #ffccdd;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff66b2;
+    }
+    .output {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #800040;
+      background: rgba(255,255,255,0.6);
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      min-height: 60px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎀 Garden Note 🎀</h1>
+  <input type="text" id="userInput" placeholder="Tulis pesan rahasia di sini...">
+  <button onclick="showNote()">𒈔 Kirim</button>
+  <div class="output" id="outputBox"></div>
+
+  <script>
+    function showNote() {
+      const text = document.getElementById("userInput").value;
+      const box = document.getElementById("outputBox");
+      if (text.trim() === '') {
+        box.innerText = "🌸 Tulis sesuatu dulu ya~";
+      } else {
+        box.innerText = `𒅒 Pesanmu: "${text}"`;
+      }
+    }
+  </script>
+</body>
+</html>
